@@ -21,9 +21,9 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Laravel Artisan Cheatsheet',
+    title: 'Шпаргалка Laravel Artisan',
     htmlAttrs: {
-      lang: 'en',
+      lang: 'ru',
     },
     meta: [
       { charset: 'utf-8' },
@@ -32,7 +32,7 @@ export default {
         hid: 'description',
         name: 'description',
         content:
-          "A bookmarkable, searchable cheatsheet for all of Laravel's default Artisan commands.",
+          "Шпаргалка с возможностью поиска и добавления в закладки для всех стандартных команд Laravel Artisan.",
       },
       { hid: 'theme-color', name: 'theme-color', content: '#312e81' },
       {
@@ -44,13 +44,13 @@ export default {
       {
         hid: 'twitter:title',
         name: 'twitter:title',
-        content: 'Laravel Artisan Cheatsheet',
+        content: 'Шпаргалка Laravel Artisan',
       },
       {
         hid: 'twitter:description',
         name: 'twitter:description',
         content:
-          "A bookmarkable, searchable cheatsheet for all of Laravel's default Artisan commands.",
+          "Шпаргалка с возможностью поиска и добавления в закладки для всех Artisan-команд Laravel по умолчанию.",
       },
       {
         hid: 'twitter:image',
@@ -61,13 +61,13 @@ export default {
       {
         hid: 'og:site_name',
         name: 'og:site_name',
-        content: 'Laravel Artisan Cheatsheet',
+        content: 'Шпаргалка Laravel Artisan',
       },
       { hid: 'og:type', name: 'og:type', content: 'website' },
       {
         hid: 'og:title',
         name: 'og:title',
-        content: 'Laravel Artisan Cheatsheet',
+        content: 'Шпаргалка Laravel Artisan',
       },
       { hid: 'og:locale', name: 'og:locale', content: 'en' },
       { hid: 'og:url', name: 'og:url', content: 'https://artisan.page' },
@@ -75,7 +75,7 @@ export default {
         hid: 'og:description',
         name: 'og:description',
         content:
-          "A bookmarkable, searchable cheatsheet for all of Laravel's default Artisan commands.",
+          "Шпаргалка с возможностью поиска и добавления в закладки для всех Artisan-команд Laravel по умолчанию.",
       },
       {
         hid: 'og:image',

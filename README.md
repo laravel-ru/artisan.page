@@ -1,12 +1,12 @@
-# [artisan.page](https://artisan.page)
+# [artisan.page](https://artisan.page) | [Перевод](https://artisan.getlaravel.ru)
 
-A bookmarkable, searchable cheatsheet for all of Laravel's default Artisan commands.
+Шпаргалка с возможностью поиска и добавления в закладки для всех Artisan-команд Laravel по умолчанию.
 
-## Generation
+## Генерация
 
-The generation of the manifest files is done via the `build` script.
+Генерация файлов манифеста выполняется с помощью сценария `build`.
 
-## Build Setup
+## Настройка сборки
 
 ```bash
 # install dependencies
@@ -23,11 +23,11 @@ $ npm run start
 $ npm run generate
 ```
 
-## Credits
+## Авторы
 
 - [James Brooks](https://github.com/jbrooksuk)
-- [All Contributors](../../contributors)
+- [Все контрибьюторы](../../contributors)
 
-## License
+## Лицензия
 
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+Лицензия MIT. Смотрите [Файл лицензии](LICENSE.md) для получения дополнительной информации.

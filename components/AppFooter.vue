@@ -5,7 +5,7 @@
         class="flex flex-col justify-center items-center text-base text-gray-100 font-normal space-x-2"
       >
         <div>
-          Made by
+          Сделано
           <a
             href="https://twitter.com/jbrooksuk"
             target="_blank"
@@ -14,7 +14,7 @@
           >
         </div>
         <div>
-          Analytics with
+          Аналитика
           <a
             href="https://usefathom.com/james"
             target="_blank"
@@ -23,7 +23,7 @@
           >
         </div>
         <div>
-          Hosted at
+          Хостинг
           <a
             href="https://netlify.com"
             target="_blank"

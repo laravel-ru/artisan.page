@@ -6,10 +6,10 @@
           <h1
             class="text-lg sm:text-4xl leading-6 font-extrabold text-indigo-900 tracking-tighter dark:text-indigo-500"
           >
-            <a href="/">Laravel Artisan Cheatsheet</a>
+            <a href="/">Шпаргалка Laravel Artisan</a>
           </h1>
           <div>
-            <label for="current-version" class="sr-only">Laravel Version</label>
+            <label for="current-version" class="sr-only">Версия Laravel</label>
             <select
               name="current-version"
               id="current-version"
@@ -32,7 +32,7 @@
             <div class="flex">
               <span
                 class="font-semibold font-heading text-indigo-900 dark:text-indigo-500"
-                >Made by
+                >Сделано
                 <a
                   href="https://twitter.com/jbrooksuk"
                   target="_blank"
@@ -46,7 +46,7 @@
                 <img
                   src="https://img.shields.io/github/stars/jbrooksuk/artisan.page?style=social"
                 />
-                <span class="sr-only">Star on GitHub</span>
+                <span class="sr-only">Звезда на GitHub</span>
               </a>
             </div>
             <theme-picker />
@@ -56,7 +56,7 @@
 
       <div class="mt-2">
         <form class="w-full flex md:ml-0">
-          <label for="search_field" class="sr-only">Search</label>
+          <label for="search_field" class="sr-only">Поиск</label>
 
           <div
             class="relative text-gray-400 focus-within:text-gray-600 min-w-full"
@@ -99,7 +99,7 @@
       <div class="flex my-8">
         <div class="hidden md:block md:w-1/4">
           <h2 class="text-xl font-bold text-indigo-900 dark:text-indigo-500">
-            Available Commands
+            Доступные команды
           </h2>
 
           <div v-for="(group, groupName) in commandLinks" class="mb-2">
@@ -125,7 +125,7 @@
                 class="rounded-xl shadow-lg overflow-hidden bg-white p-10 text-center dark:bg-gray-800"
               >
                 <p class="text-xl font-bold text-indigo-900 dark:text-gray-300">
-                  Loading...
+                  Загрузка...
                 </p>
               </div>
             </div>
@@ -136,10 +136,10 @@
                 <h1
                   class="text-xl font-bold text-indigo-900 dark:text-gray-300"
                 >
-                  No Commands Found
+                  Команды не найдены
                 </h1>
                 <p class="dark:text-gray-300">
-                  Nothing found for <code class="font-mono">{{ filter }}</code>
+                  Ничего не найдено для <code class="font-mono">{{ filter }}</code>
                 </p>
               </div>
             </div>
@@ -203,7 +203,7 @@ export default {
       if (newVersion && !manifest.laravel.includes(newVersion)) {
         this.$nuxt.error({
           statusCode: 404,
-          message: `Laravel version ${newVersion} not found.`,
+          message: `Laravel версии ${newVersion} не найден.`,
         })
       }
 

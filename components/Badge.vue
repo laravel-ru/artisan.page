@@ -6,8 +6,8 @@
       'bg-green-100 text-green-800': !required,
     }"
   >
-    <template v-if="required">Required</template>
-    <template v-else>Optional</template>
+    <template v-if="required">Обязательный</template>
+    <template v-else>Необязательный</template>
   </span>
 </template>
 

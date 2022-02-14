@@ -1,6 +1,6 @@
-# Contributors
+# Контрибьюторы
 
-Shout out to our top contributors!
+Приветствуем наших лучших участников!
 
 - [jbrooksuk](https://api.github.com/users/jbrooksuk)
 - [ash-jc-allen](https://api.github.com/users/ash-jc-allen)
