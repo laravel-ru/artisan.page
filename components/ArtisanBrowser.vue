@@ -85,7 +85,7 @@
               @keypress.enter.prevent
               type="search"
               class="placeholder-gray-400 block w-full pl-10 pr-3 py-3 text-base border border-gray-300 focus:outline-none focus:ring-purple-500 focus:border-purple-500 sm:text-sm rounded-md dark:bg-gray-800 dark:text-gray-300"
-              placeholder="Search"
+              placeholder="Поиск"
               tabindex="0"
               spellcheck="false"
               autocomplete="off"
