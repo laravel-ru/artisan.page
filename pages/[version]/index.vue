@@ -1,9 +1,15 @@
 <script setup>
-import { laravel } from '~/manifest.json'
 const route = useRoute()
+const version = route.params.version
+
+definePageMeta({
+  validate: async(route) => {
+    return /^[\d\.x]+$/.test(route.params.version)
+  }
+})
 
 useHead({
-  title: laravel[0],
+  title: version,
   titleTemplate: 'Laravel v%s - The Laravel Artisan Cheatsheet',
   link: [
     {
@@ -23,7 +29,7 @@ useHead({
     <div
       class="mx-auto px-4 sm:px-6 lg:px-8 w-full xl:w-3/4 flex flex-col gap-8"
     >
-      <ArtisanBrowser />
+      <ArtisanBrowser :version="$route.params.version" />
 
       <Carbon />
     </div>

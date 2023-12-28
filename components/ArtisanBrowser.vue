@@ -1,115 +1,33 @@
 <template>
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8 mt-8 flex-grow">
+  <div>
+    <div class="flex justify-center my-8">
+      <div class="w-2/3">
+        <Search :model-value="filter" @update:modelValue="filterResults" />
+      </div>
+    </div>
+
     <main>
-      <div class="flex flex-col md:flex-row justify-between items-center">
-        <div class="flex-grow flex space-x-4 items-center">
-          <h1
-            class="text-lg sm:text-4xl leading-6 font-extrabold text-indigo-900 tracking-tighter dark:text-indigo-500"
-          >
-            <a href="/">Шпаргалка Laravel Artisan</a>
-          </h1>
-          <div>
-            <label for="current-version" class="sr-only">Версия Laravel</label>
-            <select
-              name="current-version"
-              id="current-version"
-              v-model="currentVersion"
-              class="block w-full pl-3 pr-10 py-2 text-base border border-gray-300 focus:outline-none focus:ring-purple-500 focus:border-purple-500 sm:text-sm rounded-md dark:bg-gray-800 dark:text-gray-300"
-            >
-              <option
-                v-for="version in manifest.laravel"
-                :value="version"
-                :key="version"
-              >
-                {{ version }}
-              </option>
-            </select>
-          </div>
-        </div>
-
-        <div class="flex-grow">
-          <div class="flex justify-end items-center flex-row">
-            <div class="flex">
-              <span
-                class="font-semibold font-heading text-indigo-900 dark:text-indigo-500"
-                >Сделано
-                <a
-                  href="https://twitter.com/jbrooksuk"
-                  target="_blank"
-                  class="font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600"
-                  >@jbrooksuk</a
-                ></span
-              >
-            </div>
-            <div class="ml-3">
-              <a href="https://github.com/jbrooksuk/artisan.page">
-                <img
-                  src="https://img.shields.io/github/stars/jbrooksuk/artisan.page?style=social"
-                />
-                <span class="sr-only">Звезда на GitHub</span>
-              </a>
-            </div>
-            <theme-picker />
-          </div>
-        </div>
-      </div>
-
-      <div class="mt-2">
-        <form class="w-full flex md:ml-0">
-          <label for="search_field" class="sr-only">Поиск</label>
-
-          <div
-            class="relative text-gray-400 focus-within:text-gray-600 min-w-full"
-          >
-            <div
-              class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
-            >
-              <svg
-                class="h-5 w-5"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414   1.414l-4.816-4.816A6 6 0 012 8z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-            </div>
-
-            <input
-              id="text"
-              v-model.trim="filter"
-              @keypress.enter.prevent
-              type="search"
-              class="placeholder-gray-400 block w-full pl-10 pr-3 py-3 text-base border border-gray-300 focus:outline-none focus:ring-purple-500 focus:border-purple-500 sm:text-sm rounded-md dark:bg-gray-800 dark:text-gray-300"
-              placeholder="Поиск"
-              tabindex="0"
-              spellcheck="false"
-              autocomplete="off"
-              ref="search"
-              autofocus="true"
-            />
-          </div>
-        </form>
-      </div>
-
-      <div class="flex my-8">
-        <div class="hidden md:block md:w-1/4">
-          <h2 class="text-xl font-bold text-indigo-900 dark:text-indigo-500">
-            Доступные команды
+      <div class="flex my-8 relative">
+        <div class="hidden sticky top-20 overflow-y-auto h-screen md:block md:w-1/4 pr-4 space-y-4 scroll-mr-2 snap-y snap-start">
+          <h2 class="text-xl font-bold text-gray-900 dark:text-gray-500 snap-start scroll-m-4">
+            Commands
+            <span class="text-xs text-gray-500 dark:text-gray-200">
+              ({{ commandData.length }})
+            </span>
           </h2>
 
-          <div v-for="(group, groupName) in commandLinks" class="mb-2">
-            <h3
-              class="text-lg font-semibold text-indigo-900 dark:text-indigo-500"
-            >
+          <div v-for="(group, groupName) in commandLinks" :key="groupName" class="snap-start">
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-500">
               {{ groupName }}
+              <span
+                v-if="groupName !== ''"
+                class="text-xs text-gray-500 dark:text-gray-200"
+              >
+                ({{ group.length }})
+              </span>
             </h3>
 
-            <command-link
+            <CommandLink
               v-for="command in group"
               :key="command.name"
               :command="command"
@@ -118,36 +36,40 @@
           </div>
         </div>
 
-        <div class="w-full md:w-3/4">
+        <div class="w-full pr-0 md:pl-8">
           <div class="space-y-8">
-            <div v-if="!data.length">
+            <div v-if="!commandData.length">
               <div
                 class="rounded-xl shadow-lg overflow-hidden bg-white p-10 text-center dark:bg-gray-800"
               >
-                <p class="text-xl font-bold text-indigo-900 dark:text-gray-300">
-                  Загрузка...
+                <p class="text-xl font-bold text-gray-900 dark:text-gray-300">
+                  Loading...
                 </p>
               </div>
             </div>
-            <div v-else-if="commands.length == 0">
+            <div v-else-if="commands.length === 0">
               <div
-                class="rounded-xl shadow-lg overflow-hidden bg-white p-10 text-center dark:bg-gray-800"
+                class="shadow-lg rounded-lg overflow-hidden bg-white dark:bg-gray-800 dark:border-2 dark:border-gray-200"
               >
-                <h1
-                  class="text-xl font-bold text-indigo-900 dark:text-gray-300"
-                >
-                  Команды не найдены
-                </h1>
-                <p class="dark:text-gray-300">
-                  Ничего не найдено для <code class="font-mono">{{ filter }}</code>
-                </p>
+                <div class="px-8 py-4">
+                  <h1
+                    class="text-xl font-bold text-gray-900 dark:text-gray-300"
+                  >
+                    No Commands Found
+                  </h1>
+                  <p class="dark:text-gray-300">
+                    Nothing found for
+                    <code class="font-mono font-bold">{{ filter }}</code>
+                  </p>
+                </div>
               </div>
             </div>
 
-            <command
+            <Command
               v-for="command in commands"
               :key="command.name"
               :command="command"
+              :version="currentVersion"
             />
           </div>
         </div>
@@ -155,7 +77,7 @@
     </main>
 
     <div
-      class="fixed right-5 bottom-5 bg-gray-900 text-white text-center p-5 cursor-pointer rounded-md border-2 dark:border dark:border-indigo-400 dark:hover:border-indigo-500"
+      class="fixed left-5 bottom-5 bg-gray-900 text-white text-center p-5 cursor-pointer rounded-md border-2 dark:border dark:border-gray-400 dark:hover:border-gray-500"
       title="Back to top"
       @click="backToTop"
       v-show="showBackToTop"
@@ -166,8 +88,8 @@
 </template>
 
 <script>
-const Mousetrap = require('mousetrap')
-import manifest from '../manifest.json'
+import { laravel } from '../manifest.json'
+import groupBy from 'lodash.groupby'
 
 export default {
   props: {
@@ -178,47 +100,23 @@ export default {
   data() {
     return {
       showBackToTop: false,
-      manifest: manifest,
       currentVersion: null,
-      data: [],
+      commandData: [],
       filter: '',
     }
   },
   created() {
-    this.currentVersion = this.version || manifest['laravel'][0]
+    this.currentVersion = this.version || laravel[0]
     this.loadData(this.currentVersion)
   },
   mounted() {
     const { query } = this.$route
-    this.$refs.search.value = this.filter = query.search || ''
-    Mousetrap.bind(['command+k', 'ctrl+k', '/'], event => {
-      this.$refs.search.focus()
+    this.filter = query.search || ''
 
-      return false
-    })
     document.addEventListener('scroll', this.handleScroll)
   },
   watch: {
-    currentVersion(newVersion, oldVersion) {
-      if (newVersion && !manifest.laravel.includes(newVersion)) {
-        this.$nuxt.error({
-          statusCode: 404,
-          message: `Laravel версии ${newVersion} не найден.`,
-        })
-      }
-
-      if (oldVersion === null) {
-        return
-      }
-
-      if (newVersion !== oldVersion) {
-        this.$router.push({
-          path: `/${newVersion}/`,
-          hash: window.location.hash,
-        })
-      }
-    },
-    data() {
+    commandData() {
       window.location.hash &&
         this.$nextTick(() => {
           document.querySelector(window.location.hash).scrollIntoView({
@@ -235,7 +133,7 @@ export default {
         return Object.values(this.commandLinks).flat()
       }
 
-      return this.data.filter(command => {
+      return this.commandData.filter((command) => {
         if (
           command.name.toLowerCase().includes(keyword) ||
           command.synopsis.toLowerCase().includes(keyword) ||
@@ -246,31 +144,21 @@ export default {
       })
     },
     commandLinks() {
-      let commandLinks = {}
-
-      this.data.forEach(command => {
-        const groupName = command.name.includes(':')
-          ? command.name.split(':')[0]
-          : ''
-
-        if (commandLinks[groupName] === undefined) {
-          commandLinks[groupName] = []
-        }
-
-        commandLinks[groupName].push(command)
-      })
-
       // Sort the commands into alphabetical order so that we can
       // display the 'ungrouped' commands at the top of the list.
       return Object.fromEntries(
-        Object.entries(commandLinks).sort((a, b) => a[0] > b[0])
+        Object.entries(groupBy(this.commandData, (command) => {
+          return command.name.includes(':')
+            ? command.name.split(':')[0]
+            : ''
+        })).sort((a, b) => a[0] > b[0])
       )
     },
   },
   methods: {
     async loadData(version) {
-      const data = await import(`../assets/${version}.json`)
-      this.data = data.default
+      const commands = await import(`../assets/${version}.json`)
+      this.commandData = commands.default
     },
     handleScroll() {
       const rootElement = document.documentElement
@@ -280,6 +168,9 @@ export default {
     },
     backToTop() {
       document.documentElement.scroll({ top: 0, behavior: 'smooth' })
+    },
+    filterResults(value) {
+      this.filter = value.trim()
     },
   },
 }

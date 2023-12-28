@@ -1,4 +1,25 @@
 {
-  "laravel": ["9.x", "8.x", "7.x", "6.x"],
-  "packages": []
+  "laravel": ["10.x", "9.x", "8.x", "7.x", "6.x", "5.x"],
+  "packages": [
+    "laravel/breeze",
+    "laravel/cashier",
+    "laravel/cashier-paddle",
+    "laravel/dusk",
+    "laravel/envoy",
+    "laravel/fortify",
+    "laravel/horizon",
+    "laravel/jetstream",
+    "laravel/passport",
+    "laravel/pennant",
+    "laravel/nova",
+    "laravel/octane",
+    "laravel/pulse:@beta",
+    "laravel/sail",
+    "laravel/sanctum",
+    "laravel/scout",
+    "laravel/socialite",
+    "laravel/telescope",
+    "livewire/livewire",
+    "inertiajs/inertia-laravel"
+  ]
 }

@@ -1,12 +1,29 @@
-# [artisan.page](https://artisan.page) | [Перевод](https://artisan.getlaravel.ru)
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/img/logo-dark.svg">
+    <img src="assets/img/logo.svg" alt="The Laravel Artisan Cheatsheet" />
+  </picture>
+</p>
 
-Шпаргалка с возможностью поиска и добавления в закладки для всех Artisan-команд Laravel по умолчанию.
+<p align="center" style="display: flex; gap: 2rem; justify-content: center; width: 100%; align-items: center; height: 50px">
+    <a href="https://checkmango.com">
+        <img src="https://github.com/jbrooksuk/artisan.page/raw/master/assets/sponsors/checkmango.svg" alt="Checkmango" height="36">
+    </a>
+    <a href="https://cachethq.io">
+        <img src="https://github.com/jbrooksuk/artisan.page/raw/master/assets/sponsors/cachet.svg" alt="Cachet" height="36">
+    </a>
+    <a href="https://invoicing.to">
+        <img src="https://github.com/jbrooksuk/artisan.page/raw/master/assets/sponsors/invoicing-to.svg" alt="Invoicing.to" height="36">
+    </a>
+</p>
 
-## Генерация
+A bookmarkable, searchable cheatsheet for [Laravel's](https://laravel.com) Artisan commands.
 
-Генерация файлов манифеста выполняется с помощью сценария `build`.
+## Generation
 
-## Настройка сборки
+The generation of the manifest files is done via the `build.php` script.
+
+## Build Setup
 
 ```bash
 # install dependencies
@@ -23,11 +40,11 @@ $ npm run start
 $ npm run generate
 ```
 
-## Авторы
+## Credits
 
 - [James Brooks](https://github.com/jbrooksuk)
-- [Все контрибьюторы](../../contributors)
+- [All Contributors](../../contributors)
 
-## Лицензия
+## License
 
-Лицензия MIT. Смотрите [Файл лицензии](LICENSE.md) для получения дополнительной информации.
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.

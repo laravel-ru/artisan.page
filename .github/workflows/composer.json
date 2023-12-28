@@ -1,14 +1,19 @@
 {
   "name": "vendor_name/workflows",
   "description": "description",
-  "minimum-stability": "stable",
   "license": "proprietary",
   "authors": [
     {
-      "name": "james",
-      "email": "email@example.com"
+      "name": "James Brooks",
+      "email": "james@alt-three.com"
     }
   ],
+  "repositories": {
+    "nova": {
+      "type": "composer",
+      "url": "https://nova.laravel.com"
+    }
+  },
   "require": {
   }
 }
