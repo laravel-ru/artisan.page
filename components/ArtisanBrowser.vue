@@ -43,7 +43,7 @@
                 class="rounded-xl shadow-lg overflow-hidden bg-white p-10 text-center dark:bg-gray-800"
               >
                 <p class="text-xl font-bold text-gray-900 dark:text-gray-300">
-                  Loading...
+                  Загрузка...
                 </p>
               </div>
             </div>
@@ -55,10 +55,10 @@
                   <h1
                     class="text-xl font-bold text-gray-900 dark:text-gray-300"
                   >
-                    No Commands Found
+                  Команды не найдены
                   </h1>
                   <p class="dark:text-gray-300">
-                    Nothing found for
+                    Ничего не найдено для
                     <code class="font-mono font-bold">{{ filter }}</code>
                   </p>
                 </div>

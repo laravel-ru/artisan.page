@@ -6,19 +6,19 @@ export default defineNuxtConfig({
   ssr: true,
 
   site: {
-    url: 'https://artisan.page',
+    url: 'https://artisan.getlaravel.ru',
   },
 
   app: {
     head: {
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
-      titleTemplate: 'Laravel v%s - The Laravel Artisan Cheatsheet',
+      titleTemplate: 'Laravel v%s - Шпаргалка по Laravel Artisan',
       link: [
         {
           rel: 'icon',
           type: 'image/x-icon',
-          href: 'https://artisan.page/favicon.ico',
+          href: 'https://artisan.getlaravel.ru/favicon.ico',
         },
         {
           rel: 'style',
@@ -33,6 +33,9 @@ export default defineNuxtConfig({
           defer: 'defer',
         },
       ],
+      htmlAttrs: {
+        lang: 'ru'
+      }
     },
   },
 

@@ -27,13 +27,13 @@ const colorIcon = computed(() => {
       <MenuItems class="absolute right-0 z-10 mt-1 w-56 origin-top-right rounded-md bg-white dark:bg-gray-800 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none dark:ring-gray-700">
         <div class="py-1">
           <MenuItem @click="$colorMode.preference = 'system'" v-slot="{ active }" as="div">
-            <div :class="[active ? 'bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-400' : 'text-gray-700 dark:text-gray-400', 'block px-4 py-2 text-sm']">🖥 System</div>
+            <div :class="[active ? 'bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-400' : 'text-gray-700 dark:text-gray-400', 'block px-4 py-2 text-sm']">🖥 Системная</div>
           </MenuItem>
           <MenuItem @click="$colorMode.preference = 'light'" v-slot="{ active }" as="div">
-            <div :class="[active ? 'bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-400' : 'text-gray-700 dark:text-gray-400', 'block px-4 py-2 text-sm']">☀ Light</div>
+            <div :class="[active ? 'bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-400' : 'text-gray-700 dark:text-gray-400', 'block px-4 py-2 text-sm']">☀ Светлая</div>
           </MenuItem>
           <MenuItem @click="$colorMode.preference = 'dark'" v-slot="{ active }" as="div">
-            <div :class="[active ? 'bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-400' : 'text-gray-700 dark:text-gray-400', 'block px-4 py-2 text-sm']">🌙 Dark</div>
+            <div :class="[active ? 'bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-400' : 'text-gray-700 dark:text-gray-400', 'block px-4 py-2 text-sm']">🌙 Темная</div>
           </MenuItem>
         </div>
       </MenuItems>

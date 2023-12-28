@@ -1,7 +1,7 @@
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/img/logo-dark.svg">
-    <img src="assets/img/logo.svg" alt="The Laravel Artisan Cheatsheet" />
+    <img src="assets/img/logo.svg" alt="Шпаргалка по Laravel Artisan" />
   </picture>
 </p>
 
@@ -17,13 +17,13 @@
     </a>
 </p>
 
-A bookmarkable, searchable cheatsheet for [Laravel's](https://laravel.com) Artisan commands.
+Шпаргалка с возможностью добавления в закладки и поиска для команд [Laravel's](https://laravel.com) Artisan.
 
-## Generation
+## Генерация
 
-The generation of the manifest files is done via the `build.php` script.
+Генерация файлов манифеста осуществляется с помощью сценария `build.php`.
 
-## Build Setup
+## Настройка сборки
 
 ```bash
 # install dependencies
@@ -40,11 +40,11 @@ $ npm run start
 $ npm run generate
 ```
 
-## Credits
+## Авторы
 
 - [James Brooks](https://github.com/jbrooksuk)
 - [All Contributors](../../contributors)
 
-## License
+## Лицензия
 
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+Лицензия MIT (MIT). Дополнительную информацию смотрите в [Файле лицензии](LICENSE.md).

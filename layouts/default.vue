@@ -8,19 +8,19 @@ useHead({
 defineRobotMeta()
 
 useSeoMeta({
-  title: 'The Laravel Artisan Cheatsheet',
-  description: "A bookmarkable, searchable cheatsheet for Laravel's PHP Artisan commands.",
+  title: 'Шпаргалка по Laravel Artisan',
+  description: "Шпаргалка с возможностью добавления в закладки и поиска для команд Laravel PHP Artisan.",
 
-  ogDescription: "A bookmarkable, searchable cheatsheet for Laravel's PHP Artisan commands.",
-  ogImage: 'https://artisan.page/og.png',
-  ogTitle: 'The Laravel Artisan Cheatsheet',
+  ogDescription: "Шпаргалка с возможностью добавления в закладки и поиска для команд Laravel PHP Artisan.",
+  ogImage: 'https://artisan.getlaravel.ru/og.png',
+  ogTitle: 'Шпаргалка по Laravel Artisan',
   ogType: 'website',
 
   twitterCreator: '@jbrooksuk',
-  twitterDescription: "A bookmarkable, searchable cheatsheet for Laravel's PHP Artisan commands.",
+  twitterDescription: "Шпаргалка с возможностью добавления в закладки и поиска для команд Laravel PHP Artisan.",
   twitterSite: '@jbrooksuk',
-  twitterImage: 'https://artisan.page/og.png',
-  twitterTitle: 'The Laravel Artisan Cheatsheet',
+  twitterImage: 'https://artisan.getlaravel.ru/og.png',
+  twitterTitle: 'Шпаргалка по Laravel Artisan',
   twitterCard: 'summary_large_image',
 })
 </script>

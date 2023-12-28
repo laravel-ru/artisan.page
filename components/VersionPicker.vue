@@ -26,7 +26,7 @@ const changeVersion = (version) => {
 
 <template>
   <div class="flex-1 w-full">
-    <label for="current-version" class="sr-only">Laravel Version</label>
+    <label for="current-version" class="sr-only">Версия Laravel</label>
 
     <Menu as="div" class="relative inline-block text-left">
       <div>

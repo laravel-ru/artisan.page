@@ -5,7 +5,7 @@
       ref="search"
       :value="modelValue"
       @input="$emit('update:modelValue', $event.target.value)"
-      placeholder="Search..."
+      placeholder="Поиск..."
       @keypress.enter.prevent
       type="text"
       name="search"

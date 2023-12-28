@@ -22,7 +22,7 @@
           v-if="command.options.length"
           class="text-sm text-gray-700 dark:text-gray-300"
         >
-          <p class="font-bold text-lg">Options</p>
+          <p class="font-bold text-lg">Параметры</p>
           <ul class="list-none list-inside space-y-1">
             <li v-for="option in command.options" :key="option.name">
               <code class="text-mono">{{ option.name }}</code> -
@@ -37,7 +37,7 @@
           v-if="command.arguments.length"
           class="text-sm text-gray-700 dark:text-gray-300"
         >
-          <p class="font-bold text-lg">Arguments</p>
+          <p class="font-bold text-lg">Аргументы</p>
           <ul class="list-none list-inside space-y-1">
             <li v-for="argument in command.arguments" :key="argument.name">
               <code class="text-mono">{{ argument.name }}</code> -

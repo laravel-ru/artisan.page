@@ -22,7 +22,7 @@ defineProps({
         <div>
           <NuxtLink href="/" class="text-gray-400 hover:text-gray-500">
             <HomeIcon class="h-5 w-5 flex-shrink-0" aria-hidden="true" />
-            <span class="sr-only">Home</span>
+            <span class="sr-only">Главная</span>
           </NuxtLink>
         </div>
       </li>

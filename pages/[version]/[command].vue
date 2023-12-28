@@ -29,21 +29,21 @@ const pages = computed(() => [
 ])
 
 useHead({
-  title: `php artisan ${command.name} - Laravel ${commandVersion} - The Laravel Artisan Cheatsheet`,
+  title: `php artisan ${command.name} - Laravel ${commandVersion} - Шпаргалка по Laravel Artisan`,
   titleTemplate: null,
   link: [
     {
       rel: 'canonical',
-      href: `https://artisan.page${route.path}`,
+      href: `https://artisan.getlaravel.ru${route.path}`,
     },
   ],
 })
 
 useSeoMeta({
   description: `php artisan ${command.name} - ${command.description}`,
-  ogTitle: `php artisan ${command.name} - Laravel ${commandVersion} - The Laravel Artisan Cheatsheet`,
+  ogTitle: `php artisan ${command.name} - Laravel ${commandVersion} - Шпаргалка по Laravel Artisan`,
   ogDescription: `php artisan ${command.name} - ${command.description}`,
-  twitterTitle: `php artisan ${command.name} - Laravel ${commandVersion} - The Laravel Artisan Cheatsheet`,
+  twitterTitle: `php artisan ${command.name} - Laravel ${commandVersion} - Шпаргалка по Laravel Artisan`,
   twitterDescription: `php artisan ${command.name} - ${command.description}`,
 })
 </script>
@@ -60,8 +60,6 @@ useSeoMeta({
       <div class="mt-8">
         <Command :command="command" :version="commandVersion" />
       </div>
-
-      <Carbon />
     </div>
 
     <AppFooter />

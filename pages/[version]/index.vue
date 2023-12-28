@@ -10,11 +10,11 @@ definePageMeta({
 
 useHead({
   title: version,
-  titleTemplate: 'Laravel v%s - The Laravel Artisan Cheatsheet',
+  titleTemplate: 'Laravel v%s - Шпаргалка по Laravel Artisan',
   link: [
     {
       rel: 'canonical',
-      href: `https://artisan.page${route.path}`,
+      href: `https://artisan.getlaravel.ru${route.path}`,
     },
   ],
 })
@@ -30,8 +30,6 @@ useHead({
       class="mx-auto px-4 sm:px-6 lg:px-8 w-full xl:w-3/4 flex flex-col gap-8"
     >
       <ArtisanBrowser :version="$route.params.version" />
-
-      <Carbon />
     </div>
 
     <AppFooter />

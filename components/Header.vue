@@ -5,17 +5,17 @@
     <div class="flex flex-col items-center justify-center w-full">
       <div class="relative">
         <Logo class="h-16" />
-        <span class="sr-only">The Laravel Artisan Cheatsheet</span>
+        <span class="sr-only">Шпаргалка по Laravel Artisan</span>
       </div>
       <div>
         <h2 class="tracking-tight font-medium hidden md:block">
-          A searchable, bookmarkable cheatsheet for
+          Шпаргалка с возможностью поиска и закладками для команд
           <a
             href="https://laravel.com"
             class="text-artisan hover:text-artisan-light"
-            >Laravel's</a
+            >Laravel</a
           >
-          Artisan commands.
+          Artisan.
         </h2>
       </div>
     </div>
